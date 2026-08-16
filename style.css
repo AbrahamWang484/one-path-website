@@ -1,14 +1,466 @@
-body {
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 40px;
-    text-align: center;
+    padding: 0;
 }
 
-h1 {
-    font-size: 40px;
+html {
+    scroll-behavior: smooth;
 }
 
-p {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.nav {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #c8a96b;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #c8a96b;
+}
+
+.nav-button {
+    color: #111;
+    background: #c8a96b;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 750px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    color: white;
+    max-width: 700px;
+}
+
+.subtitle {
+    color: #c8a96b;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-text {
     font-size: 20px;
+    max-width: 600px;
+    color: #ddd;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.button {
+    display: inline-block;
+    padding: 15px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.primary {
+    background: #c8a96b;
+    color: #111;
+}
+
+.secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.dark {
+    background: #111;
+    color: white;
+}
+
+
+/* ================= SECTION ================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #b28c4b;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+.section-title.left {
+    text-align: left;
+}
+
+.section-title.light {
+    color: white;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 35px 25px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.icon {
+    color: #c8a96b;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+}
+
+
+/* ================= FLEET ================= */
+
+.fleet-section {
+    padding: 100px 0;
+    background: #111;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.fleet-card {
+    background: #1c1c1c;
+}
+
+.fleet-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.fleet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.fleet-card:hover img {
+    transform: scale(1.05);
+}
+
+.fleet-info {
+    padding: 25px;
+    color: white;
+}
+
+.fleet-info p {
+    color: #aaa;
+}
+
+
+/* ================= WHY US ================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.large-text {
+    font-size: 19px;
+    color: #555;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature {
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 25px;
+}
+
+.feature span {
+    color: #c8a96b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.feature p {
+    color: #666;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+    background: #f5f5f3;
+    padding: 100px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+/* ================= BOOKING ================= */
+
+.booking-section {
+    padding: 100px 0;
+}
+
+.booking-box {
+    background: #c8a96b;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.booking-box h3 {
+    font-size: 32px;
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    background: #111;
+    color: white;
+    padding: 70px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-grid h3 {
+    margin-bottom: 15px;
+}
+
+.contact-grid p {
+    color: #aaa;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #080808;
+    color: #777;
+}
+
+.footer {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-box {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .booking-box {
+        padding: 35px 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
 }
